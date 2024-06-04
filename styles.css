@@ -4,7 +4,8 @@ html, body {
 
 body {
     background-color: #f0f0f0;
-    margin: 0
+    margin: 0;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -23,6 +24,7 @@ a {
 
 .navbar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 0px 35px;
@@ -49,6 +51,13 @@ a {
     padding: 0px 20px;
 }
 
+@media (max-width:600px) {
+    .navbtn li {
+        padding: 0px 5px;
+        padding-bottom: 8px;
+    }
+}
+
 .navbtn li a:hover {
     color: #FFFDD0;
     transition: 0s;
@@ -62,19 +71,92 @@ a {
     margin-bottom: 80px;
 }
 
+@media (max-width: 1000px){
+    .dot-lines {
+        display: none;
+    }
+
+    .phone_icon, .linkedin_icon, .email_icon {
+        width: 70;
+    }
+}
+
 .intro {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
 .rex {
     border: 5px solid #555;
+    margin-right: 25px;
+}
+
+@media (max-width:800px) {
+    .rex img{
+        width: 180;
+        text-align: center;
+    }
 }
 
 .bio {
     font-size: 24px;
-    margin-left: -22%;   
+    /*margin-left: -22%;*/   
+}
+
+@media (max-width:800px) {
+    .bio {
+        font-size: 16px;
+    }
+
+    .employment_details h3, h4, li {
+        font-size: 16px;
+    }
+}
+
+@media (max-width:680px) {
+    .intro {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rex {
+        margin-right: 0;
+    }
+
+    .bio {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .mybio h2 {
+        font-size: 24px;
+    }
+
+    .mybio {
+        margin-bottom: 20px;
+    }
+
+    .hobbies li img {
+        width: 40;
+    }
+    
+    .employment_heading h2 {
+        font-size: 24px;
+    }
+
+    .education_heading h2 {
+        font-size: 24px;
+    }
+
+    .certification_heading h2 {
+        font-size: 24px;
+    }
+
+    .contact_heading h2 {
+        font-size: 24px;
+    }
 }
 
 .bio li {
@@ -85,6 +167,12 @@ a {
 .hobbies {
     display: flex;
     padding-top: 1.5%;
+}
+
+@media (max-width:680px) {
+    .hobbies {
+        justify-content: center;
+    }
 }
 
 .hobbies li {
@@ -140,6 +228,18 @@ a {
     margin-bottom: 20px;
 }
 
+@media (max-width:1200px) {
+    .kingsbridge {
+        width: 700;
+    }
+}
+
+@media (max-width:700px) {
+    .kingsbridge {
+        width: 400;
+    }
+}
+
 .employment_details {
     text-align: left;
     font-size: 24px;
@@ -161,11 +261,51 @@ a {
 .education_heading {
     padding-bottom: 3%;
 }
+@media (max-width:1850px) {
+    .education_timeline {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 40px;
+    }
+}
 
-.education_timeline {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 40px;
+@media (max-width:1350px) {
+    .education_timeline {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 40px;
+    }
+
+    .education_timeline .dj2, .bestari, .help {
+        align-items: center;
+        width: 300;
+    }
+}
+
+@media (max-width:1000px) {
+    .education_timeline {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .education_timeline .dj2, .bestari, .help {
+        align-items: center;
+        width: 300;
+    }
+
+    .bestari {
+        margin-left: 15px;
+    }
+
+    .help {
+        margin-left: 20px;
+    }
+
+    .prim, .sec, .uni {
+        margin-bottom: 20px;
+    }
 }
 
 .prim li {
@@ -248,6 +388,18 @@ a {
     padding-bottom: 25px;
 }
 
+@media (max-width: 925px) {
+    .academic_achievement {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 625px) {
+    .academic_achievement li{
+        font-size: 14px;
+    }
+}
+
 .certification_heading {
     margin-bottom: 35px;
 }
@@ -265,6 +417,12 @@ a {
     margin-bottom: 60px;
 }
 
+@media (max-width:1100px) {
+    .slider {
+        display: none;
+    }
+}
+
 @keyframes slide{
     25% {
         background: url(images/afs.png)
@@ -280,12 +438,31 @@ a {
     }
 }
 
+.cert-link {
+    display: flex;
+    justify-content: center;
+    color: #414a4c;
+    padding-bottom: 20px;
+    font-size: 24px;
+}
+
+.cert-link:hover {
+    color: black;
+    transform: scale(1.05);
+}
+
+@media (max-width:680px) {
+    .cert-link {
+        font-size: 16px;
+    }
+}
+
 .contact_heading {
     margin-bottom: 4%;
 }
 
 .contacts {
-    padding-left: 2%;
+    /*padding-left: 2%;*/
     display: flex;
     justify-content: space-evenly;
     text-align: center;
@@ -298,6 +475,19 @@ a {
 
 .contact_info {
     font-size: 20px;
+    text-decoration: none;
+}
+
+@media (max-width:1000px) {
+    .contact_info {
+        font-size: 16px;
+    }    
+}
+
+@media (max-width:600px) {
+    .contact_info {
+        font-size: 10px;
+    }    
 }
 
 .linkedin_link, .email_link {
@@ -341,4 +531,16 @@ a {
     margin: 0%;
     text-align: center;
     color: white;
+}
+
+@media (max-width:1000px) {
+    .copyright {
+        font-size: 16px;
+    }    
+}
+
+@media (max-width:600px) {
+    .copyright {
+        font-size: 10px;
+    }    
 }
